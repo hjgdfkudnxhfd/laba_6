@@ -27,7 +27,7 @@ public class Folders extends HttpServlet {
             return;
         }
 
-        if (path == null || path.equals("C:/Users/val_4/Desktop/abs"))
+        if (path == null || path.equals("C:/Users/val_4/Desktop/abs/"))
         {
             path = "C:\\Users\\val_4\\Desktop\\abs\\" + login;
         }

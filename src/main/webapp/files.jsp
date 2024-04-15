@@ -9,6 +9,7 @@
     String login = (String) request.getSession().getAttribute("login");
     File file = new File(directory);
     String parentDirectoryPath = "C:\\Users\\val_4\\Desktop\\abs";
+
     parentDirectoryPath = file.getParent();
 %>
 
@@ -21,6 +22,7 @@
             width: 70%;
             border-collapse: collapse;
         }
+
         th, td {
             border: 1px solid black;
             padding: 5px;
@@ -41,7 +43,7 @@
 
 <h1>Файлы в каталоге: <%= request.getSession().getAttribute("path") %></h1>
 
-<p><a href="<%= "files?path=" + parentDirectoryPath.replace("\\", "/") %>">Вверх</a></p>
+<p><a  href=<%="files?path=" + parentDirectoryPath.replace("\\","/")%>/>Вверх</p></a>
 
 
 

@@ -17,9 +17,9 @@ public class DBWorker {
         try{
             PreparedStatement preparedStatement = connection.prepareStatement("select * from users where login=?");
             preparedStatement.setString(1, login);
-            ResultSet result = preparedStatement.executeQuery();
+            ResultSet result = preparedStatement.executeQuery(); //результаты запроса
 
-            if (!result.next()) {
+            if (!result.next()) { //переход на след. строку
                 return null;
             }
 
@@ -37,7 +37,7 @@ public class DBWorker {
             stmt.setString(1, user.getLogin());
             stmt.setString(2, user.getPassword());
             stmt.setString(3, user.getEmail());
-            stmt.executeUpdate();
+            stmt.executeUpdate(); //разрешение на изменение
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

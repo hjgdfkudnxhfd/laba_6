@@ -2,24 +2,25 @@ package org.example.Model;
 
 public class AccountUser {
     private String login;
-    private String email;
     private String password;
+    private String email;
 
-    public AccountUser(String login, String email, String password){
+
+    public AccountUser(String login, String password, String email){
         this.login = login;
-        this.email = email;
         this.password = password;
+        this.email = email;
+
     }
 
     public String getLogin(){
         return login;
     }
 
-    public String getEmail(){
-        return email;
-    }
-
     public String getPassword(){
         return password;
+    }
+    public String getEmail(){
+        return email;
     }
 }

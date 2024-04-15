@@ -1,5 +1,6 @@
-import org.example.Model.AccountService;
 import org.example.Model.AccountUser;
+//C:\Users\val_4\Desktop\abs\
+import dbService.DBWorker;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,12 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import dbService.DBWorker;
 
 @WebServlet(urlPatterns = {"/registration"})
 public class CreateUser extends HttpServlet {
     private final DBWorker users = new DBWorker();
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("registration.jsp").forward(request, response);
@@ -26,7 +25,7 @@ public class CreateUser extends HttpServlet {
         String password = request.getParameter("password");
 
         AccountUser profile = new AccountUser(login, email, password);
-        if (users.getUser(login) == null) { //проверяем существует ли такой логин
+        if (users.getUser(login) == null) { //проверяем, что логин не существует
             users.addUser(profile);
 
             request.getSession().setAttribute("login", login);
